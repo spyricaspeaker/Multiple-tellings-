@@ -10,6 +10,8 @@ This first milestone defines agent identity, protocol compatibility, signed hand
 
 - `src/macs/models.py` — typed handshake data structures.
 - `src/macs/handshake.py` — HMAC signing, verification, compatibility checks, and replay protection.
+- `src/macs/local_chat.py` — authenticated loopback WebSocket chat for local agents.
+- `docs/LOCAL_AGENTS.md` — setup and client connection guide.
 - `tests/` — automated tests for valid and invalid handshakes.
 - `docs/PROTOCOL.md` — protocol behavior and security boundaries.
 
@@ -25,6 +27,10 @@ pytest
 ```
 
 The two agents must independently provision the same high-entropy shared secret over a trusted channel. Do not commit secrets or put them in source code. For production, replace shared-secret provisioning with a managed identity system and rotate credentials.
+
+## Add local agents to chat
+
+See [docs/LOCAL_AGENTS.md](docs/LOCAL_AGENTS.md) for starting the local WebSocket chat gateway and connecting any local process with a private join token. The default listener is loopback-only.
 
 ## Current status
 
