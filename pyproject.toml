@@ -7,6 +7,7 @@ name = "macs-protocol"
 version = "0.1.0"
 description = "A secure, transport-independent multi-agent handshake protocol prototype"
 requires-python = ">=3.11"
+dependencies = ["websockets>=12.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
